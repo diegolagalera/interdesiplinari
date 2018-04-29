@@ -17,6 +17,7 @@ class CreateOfertesTable extends Migration
             $table->increments('id');
             $table->string('descripcio');
             $table->integer('id_producte')->unsigned();
+            $table->integer('data')->unsigned();
             $table->foreign('id_producte')->references('id')->on('productes');
             $table->timestamps();
         });

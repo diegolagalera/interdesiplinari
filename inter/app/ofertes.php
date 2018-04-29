@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class ofertes extends Model
 {
   protected $fillable = [
-      'descripcio', 'id_producte',
+      'descripcio','data', 'id_producte',
   ];
 
 public function productes()
 {
-  return $this->belongsTo('App/productes');
+  return $this->hasMany('App/productes');
 }
 
 }
