@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOfertesTable extends Migration
+class CreateProductesCompratsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateOfertesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ofertes', function (Blueprint $table) {
+        Schema::create('productes_comprats', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcio');
+            $table->integer('id_cistella')->unsigned();
             $table->integer('id_producte')->unsigned();
-            $table->dateTime('data_inici');
-            $table->dateTime('data_final');
+            $table->integer('id_oferta')->unsigned();
+            $table->integer('quantitat')->unsigned();
+            $table->foreign('id_cistella')->references('id')->on('cistella');
             $table->foreign('id_producte')->references('id')->on('productes');
-            $table->integer('descompte')->unsigned();
+            $table->foreign('id_oferta')->references('id')->on('ofertes');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateOfertesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ofertes');
+        Schema::dropIfExists('productes_comprats');
     }
 }
