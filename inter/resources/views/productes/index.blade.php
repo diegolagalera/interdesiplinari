@@ -3,7 +3,11 @@
 
 <div class="col-lg-10 col-lg-offset-1">
     <h1><i class="fa fa-users"></i><h1>Productos</h1>
-
+    @if ($products->isEmpty())
+      <div class="text-center">
+        No hay productos
+      </div>
+    @else
   <hr>
   <div class="table-responsive">
       <table id="example"  class="table table-bordered table-striped">
@@ -30,10 +34,12 @@
         @endforeach
       </tbody>
     </table>
+    @endif
     <a href="{{ url('productes/create') }}" class="btn btn-success">Agregar producto</a>
     <div class="" style="text-align:center">
       {!! $products->render() !!}
     </div>
   </div>
 </div>
+
 @endsection
