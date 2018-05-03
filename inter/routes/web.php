@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('layouts.layout');
 });
+
+
+Route::get('/', function () {
+    return view('layouts.layoutf');
+});
+Route::resource('/productes','ProductesController');
