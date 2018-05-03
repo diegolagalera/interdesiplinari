@@ -52,6 +52,7 @@ class ProductesController extends Controller
       $product = new productes;
       $product->nom=$request->nom;
       $product->descripcio=$request->descripcio;
+      $product->caracteristiques=$request->caracteristiques;
       $product->preu=$request->preu;
       $product->imatge=$r;
 
@@ -98,6 +99,7 @@ class ProductesController extends Controller
       $product = productes::find($id);
       $product->nom=$request->nom;
       $product->descripcio=$request->descripcio;
+      $product->caracteristiques=$request->caracteristiques;
       $product->preu=$request->preu;
     //IMATGE
     if($request->file('imatge')!=null){

@@ -7,7 +7,9 @@
     <div class="form-group">
     {{Form::textarea('descripcio',$product->descripcio,['class' =>'form-controller', 'placeholder'=>'Descripción...'])}}</div>
     <div class="form-group">
-    {{Form::number('preu',$product->preu,['class' =>'form-controller', 'placeholder'=>'Precio...'])}}</div>
+    {{Form::textarea('caracteristiques',$product->caracteristiques,['class' =>'form-controller', 'placeholder'=>'Caracteristicas...'])}}</div>
+    <div class="form-group">
+    {{Form::number('preu',$product->preu,['class' =>'form-controller','step'=>'any', 'placeholder'=>'Precio...'])}}</div>
 
     <div class="form-group" align="center">
     {{Form::file('imatge',['class' =>'form-controller'])}}</div>
