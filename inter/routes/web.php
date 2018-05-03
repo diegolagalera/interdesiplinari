@@ -20,6 +20,7 @@ Route::get('/admin', function () {
     return view('layouts.layout');
 });
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -28,3 +29,10 @@ Route::resource('/users', 'UserController');
 Route::resource('roles', 'RoleController');
 
 Route::resource('permissions', 'PermissionController');
+=======
+
+Route::get('/', function () {
+    return view('layouts.layoutf');
+});
+Route::resource('/productes','ProductesController');
+>>>>>>> df71171f3c1d742bb058975d94ee23182168cb9e
