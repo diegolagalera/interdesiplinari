@@ -27,5 +27,19 @@ class UserTableSeeder extends Seeder
         ]);
 
         $user->assignRole('administrador');
+
+        $user = User::create([
+          'name'  => 'User',
+          'dni' => '47484339B',
+          'cognom' => 'user',
+          'tel' => '977719343',
+          'localitat' => 'Amposta',
+          'actiu' => '1',
+          'email_confirm' => '1',
+          'email' => 'user@gmail.com',
+          'password' => '123456',
+        ]);
+        $user->assignRole('user');
+
     }
 }

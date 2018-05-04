@@ -18,5 +18,8 @@ class RoleTableSeeder extends Seeder
         ]);
 
         $role->givePermissionTo('Administrar roles y permissions');
+        $role = Role::create([
+          'name'  => 'user'
+        ]);
     }
 }
