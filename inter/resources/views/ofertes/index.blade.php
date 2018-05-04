@@ -1,8 +1,8 @@
-@extends('layouts.layoutf')
+@extends('layouts.layout')
 @section('content')
 
 <div class="col-lg-10 col-lg-offset-1">
-    <h1><i class="fa fa-users"></i><h1>Productos</h1>
+    <h1><i class="fa fa-tags"></i>&nbsp&nbsp Ofertas</h1>
     @if ($oferta->isEmpty())
       <div class="text-center">
         No hay productos

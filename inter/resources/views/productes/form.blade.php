@@ -1,21 +1,35 @@
 {{ Form::open(['url' => $url, 'method' => $method, 'files' => TRUE]) }}
 @csrf
-<div class="" style="text-align: center;">
+<div class="row">
 
-    <div class="form-group">
-    {{Form::text('nom',$product->nom,['class' =>'form-controller', 'placeholder'=>'Nombre...'])}}</div>
-    <div class="form-group">
+    <div class="col-md-6">
+    {{Form::label('nombre', 'Nombre')}}<br>
+    {{Form::text('nom',$product->nom,[ 'placeholder'=>'Nombre...'])}}</div>
+
+  </div>
+    <div class="row">
+    <div class="col-md-6">
+      {{Form::label('desc', 'Descripción')}}<br>
     {{Form::textarea('descripcio',$product->descripcio,['class' =>'form-controller', 'placeholder'=>'Descripción...'])}}</div>
-    <div class="form-group">
+    <div class="col-md-6">
+      {{Form::label('Caracteristicas', 'Caracteristicas')}}<br>
     {{Form::textarea('caracteristiques',$product->caracteristiques,['class' =>'form-controller', 'placeholder'=>'Caracteristicas...'])}}</div>
-    <div class="form-group">
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      {{Form::label('Precio', 'Precio')}}<br>
     {{Form::number('preu',$product->preu,['class' =>'form-controller','step'=>'any', 'placeholder'=>'Precio...'])}}</div>
-
-    <div class="form-group" align="center">
+    <div class="col-md-6">
+      {{Form::label('imagen', 'Imagen')}}<br>
     {{Form::file('imatge',['class' =>'form-controller'])}}</div>
-    <div class="form-group">
-      <a href="{{url('/productes')}}">Tornar</a>
-      <input type="submit" value="Enviar" class="btn btn-primary">
+</div>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{{url('/productos')}}"><p style="margin-top: 2%;">Tornar</p></a>
+      </div>
+      <div  class="col-md-6 "  >
+      <input style="margin-left: 60%;" type="submit" value="Enviar" class="btn btn-primary" >
+      </div>
     </div>
 </div>
 {{ Form::close() }}

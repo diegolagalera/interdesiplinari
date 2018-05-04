@@ -32,5 +32,5 @@ Route::resource('permissions', 'PermissionController');
 Route::get('/', function () {
     return view('layouts.layoutf');
 });
-Route::resource('/productes','ProductesController');
+Route::resource('/productos','ProductesController');
 Route::resource('/ofertas','ofertescontroller');

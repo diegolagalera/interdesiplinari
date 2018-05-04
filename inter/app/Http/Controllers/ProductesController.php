@@ -57,7 +57,7 @@ class ProductesController extends Controller
       $product->imatge=$r;
 
       if($product->save()){
-          return redirect("/productes");
+          return redirect("/productos");
       }else{
 
           return view("productes.create");
@@ -113,7 +113,7 @@ class ProductesController extends Controller
     ///IMATGE
 
     if($product->save()){
-        return redirect("/productes");
+        return redirect("/productos");
     }else{
 
         return view("products.edit");
@@ -131,6 +131,6 @@ class ProductesController extends Controller
       $product = productes::find($id);
       productes::destroy($id);
 
-      return redirect('/productes');
+      return redirect('/productos');
     }
 }

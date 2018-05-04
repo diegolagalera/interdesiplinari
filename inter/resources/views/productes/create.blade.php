@@ -1,5 +1,5 @@
-@extends('layouts.layoutf')
+@extends('layouts.layout')
 @section('content')
-  <h1>Nuevo Prodcto</h1>
-  @include('productes.form',['product'=>$product, 'url'=>'/productes', 'method' => 'POST'])
+  <h1><i class="fa fa-archive"></i>&nbsp&nbspNuevo Prodcto</h1>
+  @include('productes.form',['product'=>$product, 'url'=>'/productos', 'method' => 'POST'])
 @endsection
