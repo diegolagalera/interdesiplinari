@@ -25,3 +25,4 @@ Route::get('/', function () {
     return view('layouts.layoutf');
 });
 Route::resource('/productes','ProductesController');
+Route::resource('/ofertas','ofertescontroller');
