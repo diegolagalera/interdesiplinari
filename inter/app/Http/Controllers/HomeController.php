@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -24,5 +25,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function show($id)
+    {
+         $user = User::find($id);
+         return view("users.show",["user"=>$user]);
+    }
+    public function mapa()
+    {
+         return view("mapa");
     }
 }

@@ -60,7 +60,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                        <a class="nav-link" href="/mapa" onclick="scrollToDownload()">
                             <i class="fa fa-thumb-tack"></i>
                         </a>
                     </li>
