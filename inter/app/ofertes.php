@@ -12,7 +12,7 @@ class ofertes extends Model
 
 public function productes()
 {
-  return $this->belongsTo('App/productes');
+  return $this->belongsTo('App\productes','id_producte','id','porductes');
 }
 public function productes_comprats()
 {
