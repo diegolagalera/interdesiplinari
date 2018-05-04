@@ -54,9 +54,13 @@
                             <a href="/{{ Auth::user()->id}}" class="dropdown-item">
                                 <i class="material-icons"></i> Perfil
                             </a>
-                            <a href="{{ route('logout') }}" class="dropdown-item">
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
                                 <i class="material-icons"></i> Salir
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                     <li class="nav-item">
