@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="{{asset('public2/assets/img/kit/free/apple-icon.png')}}">
     <link rel="icon" href="{{asset('public2/assets/img/kit/free/favicon.png')}}">
     <title>
-        Material Kit by Creative Tim
+        BAXkids
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -34,9 +34,21 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
+                  @guest
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">
+                          <i class="material-icons"></i> {{ __('Login') }}
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url('create') }}">
+                          <i class="material-icons"></i> {{ __('Register') }}
+                      </a>
+                  </li>
+                  @else
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="fa fa-users"></i> {{ Auth::user()->name }}
+                            <i class="fa fa-user"></i> {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-with-icons">
                             <a href="/{{ Auth::user()->id}}" class="dropdown-item">
@@ -72,7 +84,9 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
+                    @endguest
                 </ul>
+
             </div>
         </div>
     </nav>
