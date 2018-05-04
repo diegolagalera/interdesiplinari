@@ -1,8 +1,8 @@
-@extends('layouts.layoutf')
+@extends('layouts.layout')
 @section('content')
 
 <div class="col-lg-10 col-lg-offset-1">
-    <h1><i class="fa fa-users"></i><h1>Productos</h1>
+    <h1><i class="fa fa-archive"></i>&nbsp&nbspProductos</h1>
     @if ($products->isEmpty())
       <div class="text-center">
         No hay productos
@@ -28,14 +28,14 @@
             <td>{{$product->preu}}</td>
             <td class="text-center"><img class="imgproduct" height="70px" width="auto" src="{{$product->imatge}}"></td>
             <td class="text-center">@include('productes.delete',['product'=>$product])
-              <a href="{{ url('productes/'.$product->id.'/edit') }}" class="btn btn-success">Editar</a>
+              <a href="{{ url('productos/'.$product->id.'/edit') }}" class="btn btn-success">Editar</a>
             </td>
           </tr>
         @endforeach
       </tbody>
     </table>
     @endif
-    <a href="{{ url('productes/create') }}" class="btn btn-success">Agregar producto</a>
+    <a href="{{ url('productos/create') }}" class="btn btn-success">Agregar producto</a>
     <div class="" style="text-align:center">
       {!! $products->render() !!}
     </div>

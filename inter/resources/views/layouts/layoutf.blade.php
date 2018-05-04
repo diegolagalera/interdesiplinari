@@ -1,189 +1,177 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Render &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+<html lang="en">
 
-  <!--
-	//////////////////////////////////////////////////////
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{{asset('public2/assets/img/kit/free/apple-icon.png')}}">
+    <link rel="icon" href="{{asset('public2/assets/img/kit/free/favicon.png')}}">
+    <title>
+        BAXkids
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{asset('public2/assets/css/material-kit.css?v=2.0.2')}}">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{asset('public2/assets/assets-for-demo/demo.css')}}" rel="stylesheet" />
+    <!-- iframe removal -->
+</head>
 
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FREEHTML5.CO
+<body class="index-page ">
+    <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/">BAXkids </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  @guest
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">
+                          <i class="material-icons"></i> {{ __('Login') }}
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url('create') }}">
+                          <i class="material-icons"></i> {{ __('Register') }}
+                      </a>
+                  </li>
+                  @else
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="/{{ Auth::user()->id}}" class="dropdown-item">
+                                <i class="material-icons"></i> Perfil
+                            </a>
+                            <a href="{{ route('logout') }}" class="dropdown-item">
+                                <i class="material-icons"></i> Salir
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                            <i class="fa fa-thumb-tack"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" data-original-title="Follow us on Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" data-original-title="Like us on Facebook">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Follow us on Instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    @endguest
+                </ul>
 
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+            </div>
+        </div>
+    </nav>
 
-	//////////////////////////////////////////////////////
-	 -->
+    <!--FONDO -->
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('public2/assets/img/kit/bg2.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1>Material Kit.</h1>
+                        <h3>A Badass Bootstrap 4 UI Kit based on Material Design.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised">
+        <div class="section section-basic">
+            <div class="container">
+              @yield('content')
+            </div>
+          </div>
+        </div>
+      </body>
+    <!--  End Modal -->
+    <footer class="footer ">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://presentation.creative-tim.com">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/license">
+                            Licenses
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>, made with <i class="material-icons">favorite</i> by
+                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            </div>
+        </div>
+    </footer>
+    <!--   Core JS Files   -->
+    <script src="{{asset('public2/assets/js/core/jquery.min.js')}}"></script>
+    <script src="{{asset('public2/assets/js/core/popper.min.js')}}"></script>
+    <script src="{{asset('public2/assets/js/bootstrap-material-design.js')}}"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="{{asset('public2/assets/js/plugins/moment.min.js')}}"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker-->
+    <script src="{{asset('public2/assets/js/plugins/bootstrap-datetimepicker.min.js')}}"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="{{asset('public2/assets/js/plugins/nouislider.min.js')}}"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="{{asset('public2/assets/js/material-kit.js?v=2.0.2')}}"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="{{asset('public2/assets/assets-for-demo/js/material-kit-demo.js')}}"></script>
+    <script>
+        $(document).ready(function() {
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+            // Sliders Init
+            materialKit.initSliders();
+        });
+    </script>
+</body>
 
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="{{asset('public2/css/animate.css')}}">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{{asset('public2/css/icomoon.css')}}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{{asset('public2/css/bootstrap.css')}}">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="{{asset('public2/css/superfish.css')}}">
-
-	<link rel="stylesheet" href="{{asset('public2/css/style.css')}}">
-
-
-	<!-- Modernizr JS -->
-	<script src="{{asset('public2/js/modernizr-2.6.2.min.js')}}"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-		<div id="fh5co-header">
-			<div class="top">
-				<div class="container">
-					<span> <a href="#"><i>@</i> info@freehtml5.co</a></span>
-					<span> <a href="tel://+12345678910"><i class="icon-mobile3"></i> 123 4567 8910</a></span>
-				</div>
-			</div>
-			<!-- end:top -->
-			<header id="fh5co-header-section">
-				<div class="container">
-					<div class="nav-header">
-						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.html">Render</a></h1>
-						<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active">
-								<a href="index.html">Home</a>
-							</li>
-							<li>
-								<a href="portfolio.html">Portfolio</a>
-							</li>
-							<li>
-								<a href="services.html" class="fh5co-sub-ddown">Services</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="left-sidebar.html">Web Development</a></li>
-								 	<li><a href="right-sidebar.html">Branding &amp; Identity</a></li>
-									<li>
-										<a href="#" class="fh5co-sub-ddown">Free HTML5</a>
-										<ul class="fh5co-sub-menu">
-											<li><a href="http://freehtml5.co/preview/?item=build-free-html5-bootstrap-template" target="_blank">Build</a></li>
-											<li><a href="http://freehtml5.co/preview/?item=work-free-html5-template-bootstrap" target="_blank">Work</a></li>
-											<li><a href="http://freehtml5.co/preview/?item=light-free-html5-template-bootstrap" target="_blank">Light</a></li>
-											<li><a href="http://freehtml5.co/preview/?item=relic-free-html5-template-using-bootstrap" target="_blank">Relic</a></li>
-											<li><a href="http://freehtml5.co/preview/?item=display-free-html5-template-using-bootstrap" target="_blank">Display</a></li>
-											<li><a href="http://freehtml5.co/preview/?item=sprint-free-html5-template-bootstrap" target="_blank">Sprint</a></li>
-										</ul>
-									</li>
-									<li><a href="#">UI Animation</a></li>
-									<li><a href="#">Copywriting</a></li>
-									<li><a href="#">Photography</a></li>
-								</ul>
-							</li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav>
-					</div>
-				</div>
-			</header>
-		</div>
-
-
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" style="background-image: url({{asset('public2/images/work-1.jpg')}});">
-				<div class="desc animate-box">
-					<h2>Cluttered-Free Template</h2>
-					<span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name"></a></span>
-					<span><a class="btn btn-primary" href="#">Hire Us</a></span>
-				</div>
-			</div>
-
-		</div>
-		<!-- end:header-top -->
-		<div id="fh5co-work-section">
-			<div class="container">
-				@yield('content')
-			</div>
-		</div>
-
-
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6">
-							<p>Copyright 2016  <a href="#">Render</a>. All Rights Reserved. <br>Made with by <a href="http://freehtml5.co/"></a> / Demo Images: <a href="https://unsplash.com/">Unsplash</a></p>
-						</div>
-						<div class="col-md-6">
-							<ul class="footer-menu">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Portfolio</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-
-	</div>
-	<!-- END fh5co-page -->
-
-	</div>
-	<!-- END fh5co-wrapper -->
-
-	<!-- jQuery -->
-
-
-	<script src="{{asset('public2/js/jquery.min.js')}}"></script>
-	<!-- jQuery Easing -->
-	<script src="{{asset('public2/js/jquery.easing.1.3.js')}}"></script>
-	<!-- Bootstrap -->
-	<script src="{{asset('public2/js/bootstrap.min.js')}}"></script>
-	<!-- Waypoints -->
-	<script src="{{asset('public2/js/jquery.waypoints.min.js')}}"></script>
-	<!-- Superfish -->
-	<script src="{{asset('public2/js/hoverIntent.js')}}"></script>
-	<script src="{{asset('public2/js/superfish.js')}}"></script>
-
-	<!-- Main JS (Do not remove) -->
-	<script src="{{asset('public2/js/main.js')}}"></script>
-
-	</body>
 </html>

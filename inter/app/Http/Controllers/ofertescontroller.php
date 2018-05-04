@@ -14,7 +14,8 @@ class ofertescontroller extends Controller
      */
     public function index()
     {
-        //
+        $oferta = ofertes::all();
+        return view("ofertes.index",["oferta"=>$oferta]);
     }
 
     /**
@@ -38,7 +39,11 @@ class ofertescontroller extends Controller
     public function store(Request $request)
     {
       $oferta = new ofertes($request->all());
-      $oferta->save();
+      if($oferta->save()){
+          return redirect("/ofertas");
+      }else{
+          return view("ofertas.create");
+      }
     }
 
     /**
@@ -60,7 +65,10 @@ class ofertescontroller extends Controller
      */
     public function edit($id)
     {
-        //
+      $oferta = ofertes::find($id);
+      $product = productes::orderBy('id','ASC')->pluck('nom','id')->toArray();
+      return view("ofertes.edit",["oferta"=>$oferta, "product"=>$product]);
+
     }
 
     /**
@@ -72,7 +80,13 @@ class ofertescontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $oferta = ofertes::find($id);
+      $oferta->fill($request->all());
+      if($oferta->save()){
+          return redirect("/ofertas");
+      }else{
+          return view("ofertas.edit");
+      }
     }
 
     /**
@@ -83,6 +97,9 @@ class ofertescontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+      $oferta = ofertes::find($id);
+      ofertes::destroy($id);
+
+      return redirect('/ofertas');
     }
 }
