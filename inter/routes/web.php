@@ -23,10 +23,11 @@ Route::get('/admin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/users', 'UserController');
 
 Route::resource('roles', 'RoleController');
-
+Route::get('/mapa', 'HomeController@mapa');
 Route::resource('permissions', 'PermissionController');
 
 Route::get('/', function () {
@@ -34,3 +35,4 @@ Route::get('/', function () {
 });
 Route::resource('/productos','ProductesController');
 Route::resource('/ofertas','ofertescontroller');
+Route::get('/{id}', 'HomeController@show');

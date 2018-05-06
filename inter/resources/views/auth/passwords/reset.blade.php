@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layoutf')
 
 @section('content')
 <div class="container">
@@ -17,8 +17,10 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
+                              <div class="input-group">
+                                  <i class="material-icons">email</i>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
-
+                              </div>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>

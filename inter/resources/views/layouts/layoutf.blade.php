@@ -41,7 +41,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ url('create') }}">
+                      <a class="nav-link" href="{{ route('register') }}">
                           <i class="material-icons"></i> {{ __('Register') }}
                       </a>
                   </li>
@@ -64,7 +64,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                        <a class="nav-link" href="/mapa" onclick="scrollToDownload()">
                             <i class="fa fa-thumb-tack"></i>
                         </a>
                     </li>
