@@ -16,9 +16,17 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('/admin', function () {
     return view('layouts.layout');
 });
+Route::get('/registrar', function(){
+    return view('auth.register');
+})->name('registrar');
+Route::get('/register/verify/{code}','UserController@verify');
+
+Route::post('/registrar','UserController@registre');
+
 
 Auth::routes();
 
@@ -28,6 +36,7 @@ Route::resource('/users', 'UserController');
 
 Route::resource('roles', 'RoleController');
 Route::get('/mapa', 'HomeController@mapa');
+
 Route::resource('permissions', 'PermissionController');
 
 Route::get('/', 'HomeController@index')->name('home');

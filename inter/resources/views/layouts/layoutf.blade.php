@@ -41,7 +41,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ route('register') }}">
+                      <a class="nav-link" href="{{ route('registrar') }}">
                           <i class="material-icons"></i> {{ __('Register') }}
                       </a>
                   </li>

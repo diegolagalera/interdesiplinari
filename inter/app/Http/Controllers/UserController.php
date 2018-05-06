@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use Auth;
+use Mail;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
@@ -17,7 +18,7 @@ use Session;
 class UserController extends Controller {
 
     public function __construct() {
-        $this->middleware(['auth', 'isAdmin']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth', 'isAdmin'])->except('registre','verify'); //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
 
     /**
@@ -56,7 +57,7 @@ class UserController extends Controller {
             'password'=>'required|min:6|confirmed'
         ]);
 
-        $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
+        $user = User::create($request->only('email', 'name', 'password','cognom','dni','tel','localitat')); //Retrieving only the email and password data
 
         $roles = $request['roles']; //Retrieving the roles field
     //Checking if a role was selected
@@ -72,6 +73,41 @@ class UserController extends Controller {
             ->with('flash_message',
              'User successfully added.');
     }
+    public function registre(Request $request) {
+      $codi=str_random(25);
+      $this->validate($request, [
+          'name'=>'required|max:120',
+          'email'=>'required|email|unique:users',
+          'password'=>'required|min:6|confirmed'
+      ]);
+      $request['email_confirm']=$codi;
+      $data['name']=$request->name;
+      $data['email']=$request->email;
+      $data['email_confirm']=$request->email_confirm;
+      $user = User::create($request->only('email', 'name','email_confirm','password','cognom','dni','tel','localitat')); //Retrieving only the email and password data
+      $user->assignRole('user'); //Assigning role to user
+
+      Mail::send('mails.register',['data'=>$data],function($mail) use($data){
+        $mail->subject('confirma tu cuenta');
+        $mail->to($data['email'],$data['name']);
+      });
+
+
+        return redirect('/');
+    }
+    public function verify($code) {
+      $user =User::where('email_confirm',$code)->first();
+      if(!$user){
+        return redirect('/');
+      }
+
+      $user->actiu=1;
+      $user->email_confirm=1;
+      $user->save();
+      return redirect('login');
+    }
+
+
 
     /**
     * Display the specified resource.
