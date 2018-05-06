@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('cognom');
             $table->string('tel');
             $table->string('localitat');
-            $table->integer('actiu');
-            $table->string('email_confirm');
+            $table->integer('actiu')->default(0);
+            $table->string('email_confirm')->default(0);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

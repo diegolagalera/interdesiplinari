@@ -1,86 +1,63 @@
+{{-- \resources\views\users\create.blade.php --}}
 @extends('layouts.layoutf')
 
+@section('title', '| Add User')
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<div class='col-lg-4 col-lg-offset-4'>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-5 col-form-label text-md-right">{{ __('Name') }}</label>
+    <h1><i class='fa fa-user-plus'></i> Add User</h1>
+    <hr>
 
-                            <div class="col-md-6 offset-md-3">
-                              <div class="input-group">
-                                  <i class="material-icons">face</i>
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                              </div>
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+    {{ Form::open(array('url' => 'registrar')) }}
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6 offset-md-3">
-                              <div class="input-group">
-                                  <i class="material-icons">email</i>
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                              </div>
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for=" password" style="margin-left:4%;" class="col-md-5 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6 offset-md-3">
-                              <div class="input-group">
-                                  <i class="material-icons">lock_outline</i>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                              </div>
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" style="margin-left:3%;" class="col-md-6 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6 offset-md-3 ">
-                              <div class="input-group">
-                                  <i class="material-icons">lock_outline</i>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-7 offset-md-5">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="form-group">
+        {{ Form::label('name', 'Name') }}
+        {{ Form::text('name', 'Diego', array('class' => 'form-control')) }}
     </div>
+
+    <div class="form-group">
+        {{ Form::label('cognom', 'cognom') }}
+        {{ Form::text('cognom', 'Martinez', array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('dni', 'DNI') }}
+        {{ Form::text('dni', '47484339B', array('class' => 'form-control')) }}
+    </div>
+    <div class="form-group">
+        {{ Form::label('localitat', 'Localitat') }}
+        {{ Form::text('localitat', 'GALERA', array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('tel', 'Tel') }}
+        {{ Form::text('tel', '977719343', array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('email', 'Email') }}
+        {{ Form::email('email', 'diegolagalera_@hotmail.com', array('class' => 'form-control')) }}
+    </div>
+
+
+    <div class="form-group">
+        {{ Form::label('password', 'Password') }}<br>
+        {{ Form::password('password', array('class' => 'form-control')) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('password', 'Confirm Password') }}<br>
+        {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
+
+    </div>
+
+    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+
+    {{ Form::close() }}
+
 </div>
+
 @endsection

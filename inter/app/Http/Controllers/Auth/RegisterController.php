@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -22,6 +23,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
 
     /**
      * Where to redirect users after registration.
@@ -61,12 +63,28 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => $data['password'],
-        ]);
+      dd("hola");
+      $codi=str_random(25);
+      $this->validate($request, [
+          'name'=>'required|max:120',
+          'email'=>'required|email|unique:users',
+          'password'=>'required|min:6|confirmed'
+      ]);
+      $request['email_confirm']=$codi;
+      $data1['name']=$request->name;
+      $data1['email']=$request->email;
+      $data1['email_confirm']=$request->email_confirm;
+      $user = User::create($request->only('email', 'name', 'password','cognom','dni','tel','localitat')); //Retrieving only the email and password data
+      $user->assignRole('user'); //Assigning role to user
+
+      Mail::send('mails.register',['data'=>$data1],function($mail) use($data1){
+        $mail->subject('confirma tu cuenta');
+        $mail->to($data1['email'],$data1['name']);
+      });
+
+
+        return $user;
     }
 }

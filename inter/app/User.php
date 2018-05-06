@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','cognom','email_confirm','dni','tel','localitat', 'email', 'password',
     ];
 
     public function setPasswordAttribute($password)
