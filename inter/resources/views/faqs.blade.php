@@ -22,10 +22,10 @@
         <h5 id="faq5">Si, esta web esta diseñada para cualquier plataforma móvil o tableta.</h5>
         <br>
         <h3 onclick="checkClick('#faq6')" class="select">Sugerencia y consultas?</h3>
-        <h5 id="faq6">En BAXKids estamos orgullosos de recibir nuevas sugerencias, con la finalidad de ir mejorando con nuestros servicios. <a href="contacte.html">contacte.</a></h5>
+        <h5 id="faq6">En BAXKids estamos orgullosos de recibir nuevas sugerencias, con la finalidad de ir mejorando con nuestros servicios. <a href="/contactar">contacte.</a></h5>
         <br>
         <h3 onclick="checkClick('#faq7')" class="select">Quejas?</h3>
-        <h5 id="faq7">Si crees que ahí algo que no a ido bien te invitamos a que nos contactes y nos expliques tu mala experiencia. <a href="contacte.html">contacte.</a></h5>
+        <h5 id="faq7">Si crees que ahí algo que no a ido bien te invitamos a que nos contactes y nos expliques tu mala experiencia. <a href="/contactar">contacte.</a></h5>
         <br>
     </div>
     <!-- =================[PEU DE LA PÀGINA]=================== -->
