@@ -20,7 +20,7 @@ Route::get('/faqs', function () {
 Route::get('/contactar', function () {
     return view('contactar');
 })->name('contactar');
-Route::post('/contactar','HomeController@contactar');
+Route::post('/contactar','HomeController@contactar')->name('contactar');
 
 Route::get('/admin', function () {
     return view('layouts.layout');
