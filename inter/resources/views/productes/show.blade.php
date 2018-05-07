@@ -12,7 +12,6 @@
   </div>
   <div class="col-md-8">
     <div class="row">
-
       <div class="row">
         <div class="col-md-7">
           <h3>Descripción</h3>
@@ -20,12 +19,25 @@
         </div>
         <div class="col-md-5">
           @if(count($oferta)==0)
-            <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
                 <h2 style="color:purple"><b>{{$product->preu}}€</b> </h2>
             </div>
+            <div class="col-md-6">
+              @include('productes.reserva',['product'=>$product, 'url'=>'/res', 'method' => 'POST'])
+            </div>
+          </div>
+
             @else
           <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
               <h2 style="color:purple"><b><?php echo number_format(($product->preu-($product->preu*$oferta->descompte/100)),2, ",", ".");?>€</b></h2>
+            </div>
+            <div class="col-md-6">
+              @include('productes.reserva',['product'=>$product, 'url'=>'/res', 'method' => 'POST'])
+            </div>
+          </div>
               <div class="row">
                 <div class="col-md-6">
                     <h3 style="text-decoration: line-through">{{$product->preu}} €</h3>
@@ -61,11 +73,11 @@
       </div>
     </div>
   </div>
-    <div class="col-md-3">
-      <div class="row">
-
-      </div>
-    </div>
+</div>
+<div class="row" style="margin-top: 2%;">
+  <div class="col-md-6">
+    <a href="{{url('/')}}"><button class="btn btn-primary">Tornar</button></a>
+  </div>
 </div>
 
 @endsection
