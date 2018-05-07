@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/faqs', function () {
     return view('faqs');
-});
+})->name('faqs');
 
 Route::get('/admin', function () {
     return view('layouts.layout');

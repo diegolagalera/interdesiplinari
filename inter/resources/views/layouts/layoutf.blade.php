@@ -90,6 +90,11 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('faqs') }}">
+                            <i class="material-icons"></i> FAQS
+                        </a>
+                    </li>
                     @endguest
                 </ul>
 
