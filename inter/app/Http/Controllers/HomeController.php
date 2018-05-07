@@ -32,4 +32,8 @@ class HomeController extends Controller
     {
          return view("mapa");
     }
+    public function contactar($required )
+    {
+         return view("mapa");
+    }
 }

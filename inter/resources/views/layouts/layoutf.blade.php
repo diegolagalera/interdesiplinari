@@ -64,7 +64,6 @@
                         </div>
                     </li>
                     @endguest
-                    @guest
                     <li class="nav-item">
                         <a class="nav-link" href="/mapa" onclick="scrollToDownload()">
                             <i class="fa fa-thumb-tack"></i>
@@ -73,6 +72,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
                             <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('faqs') }}">
+                            <i class="material-icons"></i> <b>FAQS</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contactar') }}">
+                            <i class="material-icons"></i> <b>Contactar</b>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -90,12 +99,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('faqs') }}">
-                            <i class="material-icons"></i> FAQS
-                        </a>
-                    </li>
-                    @endguest
+
                 </ul>
 
             </div>

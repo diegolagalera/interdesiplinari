@@ -17,6 +17,11 @@ Route::get('/faqs', function () {
     return view('faqs');
 })->name('faqs');
 
+Route::get('/contactar', function () {
+    return view('contactar');
+})->name('contactar');
+Route::post('/contactar','HomeController@contactar');
+
 Route::get('/admin', function () {
     return view('layouts.layout');
 });
