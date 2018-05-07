@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/faqs', function () {
     return view('faqs');
 });
@@ -28,8 +30,6 @@ Route::post('/registrar','UserController@registre');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('/users', 'UserController');
 
 Route::resource('roles', 'RoleController');
@@ -37,7 +37,6 @@ Route::get('/mapa', 'HomeController@mapa');
 
 Route::resource('permissions', 'PermissionController');
 
-Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/productos','ProductesController');
 Route::resource('/ofertas','ofertescontroller');
 Route::get('/{id}', 'HomeController@show');

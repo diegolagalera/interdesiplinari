@@ -63,6 +63,8 @@
                             </form>
                         </div>
                     </li>
+                    @endguest
+                    @guest
                     <li class="nav-item">
                         <a class="nav-link" href="/mapa" onclick="scrollToDownload()">
                             <i class="fa fa-thumb-tack"></i>
