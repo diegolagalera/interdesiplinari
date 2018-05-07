@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/faqs', function () {
+    return view('faqs');
+})->name('faqs');
 
+Route::get('/contactar', function () {
+    return view('contactar');
+})->name('contactar');
+Route::post('/contactar','HomeController@contactar')->name('contactar');
 
 Route::get('/admin', function () {
     return view('layouts.layout');
@@ -30,8 +35,6 @@ Route::post('/registrar','UserController@registre');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('/users', 'UserController');
 
 Route::resource('roles', 'RoleController');
@@ -39,7 +42,6 @@ Route::get('/mapa', 'HomeController@mapa');
 
 Route::resource('permissions', 'PermissionController');
 
-Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/productos','ProductesController');
 Route::resource('/ofertas','ofertescontroller');
 Route::get('/{id}', 'HomeController@show');

@@ -63,6 +63,7 @@
                             </form>
                         </div>
                     </li>
+                    @endguest
                     <li class="nav-item">
                         <a class="nav-link" href="/mapa" onclick="scrollToDownload()">
                             <i class="fa fa-thumb-tack"></i>
@@ -71,6 +72,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
                             <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('faqs') }}">
+                            <i class="material-icons"></i> <b>FAQS</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contactar') }}">
+                            <i class="material-icons"></i> <b>Contactar</b>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -88,7 +99,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
-                    @endguest
+
                 </ul>
 
             </div>
@@ -175,6 +186,29 @@
             // Sliders Init
             materialKit.initSliders();
         });
+    </script>
+    <script>
+          var who = "";
+          var slides =['#faq1','#faq2','#faq3','#faq4','#faq5','#faq6','#faq7'];
+          function slide() {
+              console.log(who);
+              var div = $(who);
+              div.slideToggle("slow");
+          };
+          function checkClick(id){
+              who = id;
+              slide();
+          }
+          $(document).ready(function(){
+            up();
+          })
+          function up(){
+            var i =0;
+            for(i=0; i<= slides.length; i++){
+              var div = $(slides[i]);
+                div.slideUp('fast');
+            }
+          }
     </script>
 </body>
 

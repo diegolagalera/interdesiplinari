@@ -6,18 +6,11 @@ use App\ofertes;
 use DB;
 use App\productes;
 use Illuminate\Http\Request;
+use Mail;
+
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -40,5 +33,22 @@ class HomeController extends Controller
     public function mapa()
     {
          return view("mapa");
+    }
+    public function contactar(Request $request )
+    {
+      $data['name']=$request->name;
+      $data['apellido']=$request->apellido;
+      $data['email']=$request->email;
+      $data['comentario']=$request->comentario;
+      $data['email_admin']="proves201801@gmail.com";
+
+      Mail::send('mails.contactar',['data'=>$data],function($mail) use($data){
+        $mail->subject('Contactar del usuario'.$data['email']);
+        $mail->to($data['email_admin'],$data['name']);
+      });
+
+
+        return redirect('/');
+
     }
 }
