@@ -6,7 +6,7 @@
 $array = array("First slide","Second slide","Third slide",);
 $count =0;?>
   @if (!$ofertes->isEmpty())
-  <div id="carouselExampleIndicators" class="carousel slide"  data-ride="carousel">
+  <div id="carouselExampleIndicators" style="background: radial-gradient(purple, purple 1% , white 70%);"class="carousel slide"  data-ride="carousel">
       <ol class="carousel-indicators">
           @foreach ($ofertes as $ofes)
           <li data-target="#carouselExampleIndicators" data-slide-to="{{$count}}" class="active"></li>
@@ -17,12 +17,26 @@ $count =0;?>
       <div class="carousel-inner">
         @foreach ($ofertes as $ofe)
               <div class="carousel-item {{$var}}">
-                  <img style="display: block; padding-left: 25%;" height="200px" width="auto" src="{{$ofe->productes->imatge}}" alt="{{$array[$count]}}">
+                  <img style="display: block; padding-left: 20%;" height="200px" width="auto" src="{{$ofe->productes->imatge}}" alt="{{$array[$count]}}">
                   <div class="carousel-caption d-none d-md-block">
-                      <h4 style="display: block; padding-left: 16%;color:black">
-                          <b> {{$ofe->productes->nom}}</b> <br>Hasta un <b>{{$ofe->descompte}}</b>% descuento
-                      </h4>
+
+                    <div class="row">
+                      <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4">
+                        <h4 style="display: block; color:purple; padding-left: 15%;">
+                            <b> {{$ofe->productes->nom}}</b> <br>Hasta un <b>{{$ofe->descompte}}</b>% descuento
+                        </h4>
+                        <a href="/productos/{{$ofe->id_producte}}"><button class="btn btn-primary" >Reservar ahora!</button></a>
+                      </div>
+                      <div class="col-md-4">
+                        <h4 style="display: block; padding-left: 15%;color:purple">
+                            Desde el <br><b>{{$ofe->data_inici}}</b> <br>Hasta el <br><b>{{$ofe->data_final}}</b>
+                        </h4>
+                      </div>
+                    </div>
                   </div>
+
               </div>
               <?php $var = '';
               $count+=1; ?>
@@ -52,7 +66,7 @@ $count =0;?>
             </div>
             <div class="row" style="text-align:center;" >
               <div class="col-12">
-                <h4>{{$product->preu}}</h4>
+                <h4 style="color:purple"><b>{{$product->preu}} €</b></h4>
               </div>
             </div>
             <div class="row mt-auto" >
