@@ -176,6 +176,29 @@
             materialKit.initSliders();
         });
     </script>
+    <script>
+          var who = "";
+          var slides =['#faq1','#faq2','#faq3','#faq4','#faq5','#faq6','#faq7'];
+          function slide() {
+              console.log(who);
+              var div = $(who);
+              div.slideToggle("slow");
+          };
+          function checkClick(id){
+              who = id;
+              slide();
+          }
+          $(document).ready(function(){
+            up();
+          })
+          function up(){
+            var i =0;
+            for(i=0; i<= slides.length; i++){
+              var div = $(slides[i]);
+                div.slideUp('fast');
+            }
+          }
+    </script>
 </body>
 
 </html>

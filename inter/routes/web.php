@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/faqs', function () {
+    return view('faqs');
 });
-
-
 
 Route::get('/admin', function () {
     return view('layouts.layout');
