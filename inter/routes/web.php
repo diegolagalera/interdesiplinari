@@ -37,9 +37,7 @@ Route::get('/mapa', 'HomeController@mapa');
 
 Route::resource('permissions', 'PermissionController');
 
-Route::get('/', function () {
-    return view('layouts.layoutf');
-});
+Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/productos','ProductesController');
 Route::resource('/ofertas','ofertescontroller');
 Route::get('/{id}', 'HomeController@show');
