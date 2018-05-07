@@ -96,7 +96,7 @@
     </nav>
 
     <!--FONDO -->
-    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('public2/assets/img/kit/bg2.jpg');">
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('/public2/assets/img/kit/bg2.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">

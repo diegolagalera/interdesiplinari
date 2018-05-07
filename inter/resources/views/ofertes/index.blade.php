@@ -37,7 +37,7 @@
       </tbody>
     </table>
     @endif
-    <a href="{{ url('ofertas/create') }}" class="btn btn-success">Agregar producto</a>
+    <a href="{{ url('ofertas/create') }}" class="btn btn-success">Agregar oferta</a>
     <div class="" style="text-align:center">
     </div>
   </div>

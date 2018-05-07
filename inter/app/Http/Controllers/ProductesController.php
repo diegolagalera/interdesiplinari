@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\productes;
-
+use App\ofertes;
+use DB;
 class ProductesController extends Controller
 {
     /**
@@ -72,7 +73,14 @@ class ProductesController extends Controller
      */
     public function show($id)
     {
-        //
+        $product=  productes::find($id);
+        $ofertes= DB::table('ofertes')->where([['id_producte','=',$id],['ofertes.data_inici','<',date('Y-m-j H:i:s')],['ofertes.data_final','>',date('Y-m-j H:i:s')]])->get()->toArray();
+
+        if(count($ofertes)>0){
+          $ofertes = $ofertes[0];
+        }
+
+        return view("productes.show",["product"=>$product,"oferta"=>$ofertes]);
     }
 
     /**
