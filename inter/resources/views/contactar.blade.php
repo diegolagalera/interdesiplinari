@@ -26,7 +26,8 @@
     </div>
 
     <div class="form-group">
-        {{Form::textarea('comentario',null,['class' =>'form-controller', 'placeholder'=>'Comentario'])}}</div>
+        {{ Form::label('Comentario', 'Comentario') }}
+        {{Form::textarea('comentario',null,['class' =>'form-control', 'placeholder'=>'Comentario'])}}</div>
     </div>
 
 
