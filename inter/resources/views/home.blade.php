@@ -6,7 +6,7 @@
 $array = array("First slide","Second slide","Third slide",);
 $count =0;?>
   @if (!$ofertes->isEmpty())
-  <div id="carouselExampleIndicators" style="background: radial-gradient(purple, purple 1% , white 70%);"class="carousel slide"  data-ride="carousel">
+  <div id="carouselExampleIndicators" style="background: radial-gradient(rgb(209,120,178) 1%, rgb(229,179,212) 39% , white 60%);"class="carousel slide"  data-ride="carousel">
       <ol class="carousel-indicators">
           @foreach ($ofertes as $ofes)
           <li data-target="#carouselExampleIndicators" data-slide-to="{{$count}}" class="active"></li>
