@@ -12,6 +12,7 @@
         BAXkids
     </title>
     <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{asset('public2/assets/css/material-kit.css?v=2.0.2')}}">
@@ -107,19 +108,19 @@
     </nav>
 
     <!--FONDO -->
-    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('/public2/assets/img/kit/bg2.jpg');">
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('/public2/assets/img/kit/BAXkid.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
                     <div class="brand">
-                        <h1>Material Kit.</h1>
-                        <h3>A Badass Bootstrap 4 UI Kit based on Material Design.</h3>
+                        <p style="font-family: 'Princess Sofia';font-size:90px;">BaxKids</p><br>
+                        <h3>-KIDS HAIR SALON-</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="main main-raised">
+    <div class="main main-raised" style="margin:-190px 30px 0px !important;">
         <div class="section section-basic">
             <div class="container">
               @yield('content')
