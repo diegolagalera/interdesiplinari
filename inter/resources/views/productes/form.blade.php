@@ -12,8 +12,8 @@
       {{Form::label('desc', 'Descripción')}}<br>
     {{Form::textarea('descripcio',$product->descripcio,['class' =>'form-controller', 'placeholder'=>'Descripción...'])}}</div>
     <div class="col-md-6">
-      {{Form::label('Caracteristicas', 'Caracteristicas')}}<br>
-    {{Form::textarea('caracteristiques',$product->caracteristiques,['class' =>'form-controller', 'placeholder'=>'Caracteristicas...'])}}</div>
+      {{Form::label('Características', 'Características')}}<br>
+    {{Form::textarea('caracteristiques',$product->caracteristiques,['class' =>'form-controller', 'placeholder'=>'Características...'])}}</div>
   </div>
   <div class="row">
     <div class="col-md-6">
