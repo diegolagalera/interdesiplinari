@@ -55,6 +55,11 @@
                             <a href="/{{ Auth::user()->id}}" class="dropdown-item">
                                 <i class="material-icons"></i> Perfil
                             </a>
+                            @if(Auth::user()->name=="Administrador")
+                            <a href="/users" class="dropdown-item">
+                                <i class="material-icons"></i> Administración
+                            </a>
+                            @endif
                             <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
                                 <i class="material-icons"></i> Salir

@@ -50,46 +50,29 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
-                        <i class="ti-panel"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
+								<li class="active">
+										<a href="{{ route('home')}}">
+												<i class="ti-home"></i>
+												<p>Inicio</p>
+										</a>
+								</li>
+
                 <li>
-                    <a href="user.html">
+                    <a href="/users">
                         <i class="ti-user"></i>
-                        <p>User Profile</p>
+                        <p>Usuarios</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="/productos">
                         <i class="ti-view-list-alt"></i>
-                        <p>Table List</p>
+                        <p>Productos</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="ti-text"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="ti-pencil-alt2"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="ti-map"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
+                    <a href="/ofertas">
                         <i class="ti-bell"></i>
-                        <p>Notifications</p>
+                        <p>Ofertas</p>
                     </a>
                 </li>
             </ul>
