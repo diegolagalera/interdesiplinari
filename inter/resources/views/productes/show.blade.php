@@ -24,7 +24,7 @@
                 <h2 style="color:purple"><b>{{$product->preu}}€</b> </h2>
             </div>
             <div class="col-md-6">
-              @include('productes.reserva',['product'=>$product, 'url'=>'/res', 'method' => 'POST'])
+              @include('productes.reserva',['product'=>$product,'oferta'=>$oferta, 'url'=>'/cistella', 'method' => 'POST'])
             </div>
           </div>
 
@@ -35,7 +35,7 @@
               <h2 style="color:purple"><b><?php echo number_format(($product->preu-($product->preu*$oferta->descompte/100)),2, ",", ".");?>€</b></h2>
             </div>
             <div class="col-md-6">
-              @include('productes.reserva',['product'=>$product, 'url'=>'/res', 'method' => 'POST'])
+              @include('productes.reserva',['product'=>$product,'oferta'=>$oferta,  'url'=>'/cistella', 'method' => 'POST'])
             </div>
           </div>
               <div class="row">

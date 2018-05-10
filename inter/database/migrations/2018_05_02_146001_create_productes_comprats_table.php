@@ -19,7 +19,7 @@ class CreateProductesCompratsTable extends Migration
             $table->integer('id_producte')->unsigned();
             $table->integer('id_oferta')->unsigned();
             $table->integer('quantitat')->unsigned();
-            
+
             $table->foreign('id_cistella')->references('id')->on('cistella');
             $table->foreign('id_producte')->references('id')->on('productes');
             $table->foreign('id_oferta')->references('id')->on('ofertes');

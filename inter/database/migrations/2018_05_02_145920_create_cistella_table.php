@@ -17,6 +17,7 @@ class CreateCistellaTable extends Migration
             $table->increments('id');
             $table->integer('id_usuari')->unsigned();
             $table->dateTime('data');
+            $table->integer('status')->default(0);
             $table->foreign('id_usuari')->references('id')->on('users');
             $table->timestamps();
         });
