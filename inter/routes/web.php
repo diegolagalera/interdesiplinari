@@ -46,5 +46,4 @@ Route::get('/mapa', 'HomeController@mapa');
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('/productos','ProductesController');
-
 Route::get('/{id}', 'HomeController@show');
