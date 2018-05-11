@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cistellas extends Model
+class cistella extends Model
 {
   protected $fillable = [
     'id_usuari','data','status',
   ];
+  protected $table = 'cistella';
 
   public function users()
   {

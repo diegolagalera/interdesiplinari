@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                        <a class="nav-link" href="/cistella/show" onclick="scrollToDownload()">
                             <i class="fa fa-shopping-cart"></i>
                         </a>
                     </li>

@@ -12,14 +12,14 @@ class productes_comprats extends Model
 
   public function cistella()
   {
-    return $this->belongsTo('App/cistella');
+    return $this->belongsTo('App\cistella');
   }
   public function productes()
   {
-    return $this->belongsTo('App/productes');
+    return $this->belongsTo('App\productes','id_producte','id','productes');
   }
   public function oferta()
   {
-    return $this->belongsTo('App/oferta');
+    return $this->belongsTo('App\oferta');
   }
 }

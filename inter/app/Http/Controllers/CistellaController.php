@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\cistella;
 use App\productes_comprats;
 use DB;
+use Auth;
 
 class CistellaController extends Controller
 {
@@ -46,6 +47,7 @@ class CistellaController extends Controller
         $producte->id_oferta=$request->id_oferta;
         $producte->quantitat=$request->unidades;
         $producte->save();
+        return redirect('/');
 
         // dd($cistella[0]->id);
         // dd("hola");
@@ -64,6 +66,8 @@ class CistellaController extends Controller
         $producte->id_oferta=$request->id_oferta;
         $producte->quantitat=$request->unidades;
         $producte->save();
+        return redirect('/');
+
       }
 
   }
@@ -76,7 +80,13 @@ class CistellaController extends Controller
      */
     public function show($id)
     {
-        //
+      $cistella= cistella::where([['id_usuari','=',Auth::user()->id],['status','=',1]])->get();
+      $producte= productes_comprats::where('id_cistella','=',$cistella[0]->id)->get();
+      // if(count($ofertes)>0){
+      //   $ofertes = $ofertes[0];
+      // }
+
+      return view("cistella.show",["producte"=>$producte,"cistella"=>$cistella]);
     }
 
     /**
@@ -110,6 +120,16 @@ class CistellaController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $producte = productes_comprats::findOrFail($id);
+      $producte->delete();
+
+      return redirect('cistella/show');
+    }
+    public function cancel($id)
+    {
+      $producte= productes_comprats::where('id_cistella','=',$id)->delete();
+      $cistella= cistella::where([['id_usuari','=',Auth::user()->id],['id','=',$id]])->delete();
+
+      return redirect('/');
     }
 }
