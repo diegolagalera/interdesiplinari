@@ -7,6 +7,9 @@ use App\productes;
 use App\ofertes;
 class ofertescontroller extends Controller
 {
+  public function __construct() {
+      $this->middleware(['auth', 'clearance']);
+  }
     /**
      * Display a listing of the resource.
      *
