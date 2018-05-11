@@ -80,6 +80,7 @@ class UserController extends Controller {
           'email'=>'required|email|unique:users',
           'password'=>'required|min:6|confirmed'
       ]);
+
       $request['email_confirm']=$codi;
       $data['name']=$request->name;
       $data['email']=$request->email;

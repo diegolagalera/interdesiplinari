@@ -26,9 +26,7 @@ Route::get('/cistella/cancel/{id}','CistellaController@cancel')->name('cistella.
 Route::get('/cistella/finalitzar/{id}','CistellaController@finalitzar')->name('cistella.finalitzar');
 
 
-Route::get('/admin', function () {
-    return view('layouts.layout');
-});
+
 Route::get('/registrar', function(){
     return view('auth.register');
 })->name('registrar');
@@ -47,5 +45,6 @@ Route::get('/mapa', 'HomeController@mapa');
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('/productos','ProductesController');
-Route::resource('/ofertas','ofertescontroller');
+
 Route::get('/{id}', 'HomeController@show');
+Route::resource('/ofertas','ofertescontroller');
