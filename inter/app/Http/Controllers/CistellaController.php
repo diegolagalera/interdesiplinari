@@ -10,6 +10,9 @@ use Auth;
 
 class CistellaController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'clearance']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -80,11 +83,11 @@ class CistellaController extends Controller
      */
     public function show($id)
     {
+      $producte=['-1'];
       $cistella= cistella::where([['id_usuari','=',Auth::user()->id],['status','=',1]])->get();
-      $producte= productes_comprats::where('id_cistella','=',$cistella[0]->id)->get();
-      // if(count($ofertes)>0){
-      //   $ofertes = $ofertes[0];
-      // }
+      if(count($cistella)>0){
+        $producte= productes_comprats::where('id_cistella','=',$cistella[0]->id)->get();
+      }
 
       return view("cistella.show",["producte"=>$producte,"cistella"=>$cistella]);
     }
@@ -125,11 +128,22 @@ class CistellaController extends Controller
 
       return redirect('cistella/show');
     }
+
     public function cancel($id)
     {
-      $producte= productes_comprats::where('id_cistella','=',$id)->delete();
+      $cistella= productes_comprats::where('id_cistella','=',$id)->delete();
       $cistella= cistella::where([['id_usuari','=',Auth::user()->id],['id','=',$id]])->delete();
-
       return redirect('/');
     }
+
+    public function finalitzar($id)
+    {
+      $cistella = cistella::find($id);
+      $cistella->status=2;
+      $cistella->save();
+
+      return redirect('/');
+
+    }
+
 }

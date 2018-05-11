@@ -23,6 +23,8 @@ Route::get('/contactar', function () {
 Route::post('/contactar','HomeController@contactar')->name('contactar');
 Route::resource('/cistella', 'CistellaController');
 Route::get('/cistella/cancel/{id}','CistellaController@cancel')->name('cistella.cancel');
+Route::get('/cistella/finalitzar/{id}','CistellaController@finalitzar')->name('cistella.finalitzar');
+
 
 
 Route::get('/registrar', function(){

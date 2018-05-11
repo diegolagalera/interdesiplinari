@@ -4,6 +4,9 @@
 <div class="container">
   <h2 style="text-align:center">Cesta de reservas</h2>
   </br>
+  @if($producte[0]=='-1')
+  <h1 style="text-align:center">La cesta está vacía</h1>
+  @else
   <table class="table" style="text-align:center;">
     <thead>
       <tr>
@@ -39,11 +42,14 @@
     </tbody>
   </table>
   <div class="row">
-    <div class="">
-      <a href="{{ route('cistella.cancel', $cistella[0]->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Cancelar</a>
-
-      
+    <div class="col-md-9">
+      <a href="{{ route('cistella.cancel', $cistella[0]->id) }}" class="btn btn-danger pull-left" style="margin-right: 3px;">Cancelar</a>
+    </div>
+    <div class="col-md-3">
+      <a href="{{ route('cistella.finalitzar', $cistella[0]->id) }}" class="btn btn-info pull-left" style="margin-left: 27%;">Finalizar</a>
     </div>
   </div>
+  @endif
+
 </div>
 @endsection
