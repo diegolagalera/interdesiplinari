@@ -33,6 +33,7 @@ Route::get('/registrar', function(){
 Route::get('/register/verify/{code}','UserController@verify');
 
 Route::post('/registrar','UserController@registre');
+Route::resource('/ofertas','ofertescontroller');
 
 
 Auth::routes();
@@ -47,4 +48,3 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('/productos','ProductesController');
 
 Route::get('/{id}', 'HomeController@show');
-Route::resource('/ofertas','ofertescontroller');
