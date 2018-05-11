@@ -12,6 +12,7 @@
   </div>
   <div class="col-md-8">
     <div class="row">
+      <div class="col-md-12">
       <div class="row">
         <div class="col-md-7">
           <h3>Descripción</h3>
@@ -67,11 +68,12 @@
       </div>
       <div class="row">
         <div class="col-md-12 ">
-          <h3>Caracteristicas</h3>
+          <h3>Características</h3>
           <h5 style="text-align: justify;">{{$product->caracteristiques}}</h5>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 <div class="row" style="margin-top: 2%;">
