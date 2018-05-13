@@ -11,10 +11,9 @@ use Mail;
 
 class HomeController extends Controller
 {
-  public function __construct() {
-      $this->middleware(['auth', 'clearance'])->except(['index','mapa','contactar']);
-  }
-
+    public function __construct() {
+        $this->middleware(['auth', 'clearance'])->except(['index','mapa','contactar']);
+    }
     /**
      * Show the application dashboard.
      *
