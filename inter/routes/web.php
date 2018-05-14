@@ -32,6 +32,7 @@ Route::get('/registrar', function(){
 Route::get('/register/verify/{code}','UserController@verify');
 
 Route::post('/registrar','UserController@registre');
+Route::resource('/ofertas','ofertescontroller');
 
 
 Auth::routes();
