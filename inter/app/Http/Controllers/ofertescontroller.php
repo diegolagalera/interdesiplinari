@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\productes;
 use App\ofertes;
+use DB;
 class ofertescontroller extends Controller
 {
   public function __construct() {
@@ -28,6 +29,10 @@ class ofertescontroller extends Controller
      */
     public function create()
     {
+
+      // $count = ofertes::where([['id_producte','=',7 ],
+      // ['data_inici','<','22-02-2011 22:22:00'],['data_final','>','29-02-2020 22:22:00']])->get();
+
       $oferta = new ofertes;
       $product = productes::orderBy('id','ASC')->pluck('nom','id')->toArray();
       return view("ofertes.create",["oferta"=>$oferta, "product"=>$product]);
@@ -41,12 +46,21 @@ class ofertescontroller extends Controller
      */
     public function store(Request $request)
     {
-      $oferta = new ofertes($request->all());
-      if($oferta->save()){
-          return redirect("/ofertas");
+
+      $count = ofertes::where([['id_producte','=',$request->id_producte],
+    ['data_inici','<',$request->data_inici],['data_final','>',$request->data_final]])->get();
+
+      if($count->isEmpty()){
+        $oferta = new ofertes($request->all());
+
+          if($oferta->save()){
+            return response()->json("1");
+
+          }
       }else{
-          return view("ofertas.create");
-      }
+          return response()->json("Fechas incorrectas");
+            return view("ofertas.create");
+    }
     }
 
     /**
@@ -83,12 +97,17 @@ class ofertescontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-      $oferta = ofertes::find($id);
-      $oferta->fill($request->all());
-      if($oferta->save()){
-          return redirect("/ofertas");
+      $count = ofertes::where([['id_producte','=',$request->id_producte],
+      ['data_inici','<',$request->data_inici],['data_final','>',$request->data_final]])->get();
+
+      if($count->isEmpty()){
+        $oferta = ofertes::find($id);
+        $oferta->fill($request->all());
+          if($oferta->save()){
+                return response()->json("1");
+            }
       }else{
-          return view("ofertas.edit");
+            return response()->json("Fechas incorrectas");
       }
     }
 
