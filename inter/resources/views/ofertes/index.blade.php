@@ -22,14 +22,24 @@
       </thead>
       <tbody>
         @foreach($oferta as $ofe)
-          <tr>
+        <?php $c = ""?>
+          @if($ofe->active==0)
+          <?php $c = "background-color:rgba(255,0,0,0.3);
+"?>
+          @else
+          <?php $c = "color:black"?>
+          @endif
+          <tr style="<?php echo $c ?>">
 
 
             <td><img height="70px" width="auto" src="{{$ofe->productes->imatge}}">{{$ofe->productes->nom}}</td>
             <td>{{$ofe->data_inici}}</td>
             <td>{{$ofe->data_final}}</td>
             <td>{{$ofe->descompte}}</td>
-            <td class="text-center">@include('ofertes.delete',['oferta'=>$ofe])
+
+
+            <td class="text-center">
+              <a href="{{ url('ofertas/'.$ofe->id.'/cancelar') }}" class="btn btn-danger">Cancelar</a>
               <a href="{{ url('ofertas/'.$ofe->id.'/edit') }}" class="btn btn-success">Editar</a>
             </td>
           </tr>

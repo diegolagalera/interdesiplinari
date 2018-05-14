@@ -101,8 +101,16 @@ class ofertescontroller extends Controller
     public function destroy($id)
     {
       $oferta = ofertes::find($id);
-      ofertes::destroy($id);
-
+      $oerta->active=0;
+      $oferta->save();
       return redirect('/ofertas');
     }
+    public function cancelar($id)
+    {
+      $oferta = ofertes::find($id);
+      $oferta->active=0;
+      $oferta->save();
+      return redirect('/ofertas');
+    }
+
 }
