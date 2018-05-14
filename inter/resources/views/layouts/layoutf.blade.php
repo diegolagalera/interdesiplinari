@@ -134,38 +134,26 @@
         </div>
       </body>
     <!--  End Modal -->
+
     <footer class="footer ">
         <div class="container">
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
+                      <p><strong>Grup 1: </strong></p>
                     </li>
                     <li>
-                        <a href="http://presentation.creative-tim.com">
-                            About Us
-                        </a>
+                      <p><strong>Professor:</strong> Alex Milian, Toni Morant, Carles Año</p>
                     </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            Licenses
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <div class="copyright pull-right">
                 &copy;
                 <script>
                     document.write(new Date().getFullYear())
-                </script>, made with <i class="material-icons">favorite</i> by
-                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                </script>
+                <a href="" target="_blank">creative commons</a>
             </div>
         </div>
     </footer>
@@ -215,6 +203,19 @@
                 div.slideUp('fast');
             }
           }
+    </script>
+    <script>
+        function loadDoc() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML =
+              this.responseText;
+            }
+          };
+          xhttp.open("GET", "{{asset('public2/Historia.txt')}}", true);
+          xhttp.send();
+      }
     </script>
 </body>
 

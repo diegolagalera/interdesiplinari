@@ -27,13 +27,16 @@
         <h3 onclick="checkClick('#faq7')" class="select">Quejas?</h3>
         <h5 id="faq7">Si crees que ahí algo que no a ido bien te invitamos a que nos contactes y nos expliques tu mala experiencia. <a href="/contactar">contacte.</a></h5>
         <br>
+        <hr>
+        <button class="btn btn-info" onclick="loadDoc()"><h2>Historia</h2></button>
+        </br>
+        </br>
+
+        <div id="demo" style="text-align:justify">
     </div>
+
     <!-- =================[PEU DE LA PÀGINA]=================== -->
-    <footer class="container-fluid text-center">
-      <p><strong>Grup 1: </strong>Jordi Simó, Enric Beltran, Diego Martinez </p>
-      <p><strong>Professor:</strong> Alex Milian</p>
-      <p>No siempre puedes controlar lo que sucede en el exterior. Pero siempre puedes controlar lo que sucede en el interior.</p>
-    </footer>
+
 
 
 @endsection

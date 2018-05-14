@@ -25,10 +25,17 @@
         <td>-</td>
 
         @else
-        <td>{{$a->id_oferta}}</td>
+        <td>{{$a->oferta->descompte}}%</td>
         @endif
         <td>{{$a->quantitat}}</td>
+        @if($a->id_oferta=="")
         <td>{{$a->productes->preu}}</td>
+        @else
+
+        <td><?php  $r= number_format((($a->productes->preu-($a->productes->preu*$a->oferta->descompte/100))*$a->quantitat),2,",",".");
+        echo $r;?>
+        </td>
+        @endif
 
         <td>
 

@@ -20,6 +20,6 @@ class productes_comprats extends Model
   }
   public function oferta()
   {
-    return $this->belongsTo('App\oferta');
+    return $this->belongsTo('App\ofertes','id_oferta','id','ofertes');
   }
 }
