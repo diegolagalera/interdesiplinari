@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
       $ofertes = ofertes::where([['ofertes.data_inici','<',date('Y-m-j H:i:s')],['ofertes.data_final','>',date('Y-m-j H:i:s')]])
         ->orderBy('data_final','ASC')->take(3)->get();
-        $productes = productes::all();
+        $productes = productes::all()->take(9);
         return view('home',["ofertes"=>$ofertes,"productes"=>$productes]);
     }
 
@@ -49,6 +49,19 @@ class HomeController extends Controller
 
 
         return redirect('/');
+
+    }
+
+    public function categorias(Request $request){
+      if($request->id==3){
+        $ofertes = ofertes::where([['ofertes.data_inici','<',date('Y-m-j H:i:s')],['ofertes.data_final','>',date('Y-m-j H:i:s')]])
+          ->orderBy('data_final','ASC')->get();
+          return view('home2',["ofertas"=>$ofertes]);
+      }else{
+        $ofertes = ofertes::where('id','=',-1)->take(1)->get();
+        $productes = productes::all()->where('tipus','=',$request->id);
+        return view('home',["ofertes"=>$ofertes,"productes"=>$productes]);
+      }
 
     }
 }

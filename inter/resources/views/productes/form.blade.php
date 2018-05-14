@@ -3,10 +3,14 @@
 <div class="row">
 
     <div class="col-md-6">
-    {{Form::label('nombre', 'Nombre')}}<br>
-    {{Form::text('nom',$product->nom,[ 'placeholder'=>'Nombre...'])}}</div>
+      {{Form::label('nombre', 'Nombre')}}<br>
+      {{Form::text('nom',$product->nom,[ 'placeholder'=>'Nombre...'])}}</div>
 
-  </div>
+    <div class="col-md-6">
+      {{Form::label('Tipo', 'Tipo')}}<br>
+      {{Form::select('tipo', ['1'=>'Producto', '2'=>'cortado'],null,['class'=>'from-control'])}}</div>
+    </div>
+    </div>
     <div class="row">
     <div class="col-md-6">
       {{Form::label('desc', 'Descripción')}}<br>
