@@ -33,8 +33,7 @@ Route::get('/register/verify/{code}','UserController@verify');
 
 Route::post('/registrar','UserController@registre');
 Route::resource('/ofertas','ofertescontroller');
-Route::get('/excepcio','ExcepcionsController@index')->name('excepcio');
-Route::post('/excepcio','ExcepcionsController@ofertatime');
+Route::get('/ofertas/{id}/cancelar','ofertescontroller@cancelar');
 
 
 Auth::routes();

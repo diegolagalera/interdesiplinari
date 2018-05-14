@@ -21,6 +21,7 @@ class CreateOfertesTable extends Migration
             $table->dateTime('data_final');
             $table->foreign('id_producte')->references('id')->on('productes');
             $table->integer('descompte')->unsigned();
+            $table->integer('active')->unsigned()->default(1);
             $table->timestamps();
         });
     }
