@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/faqs', function () {
@@ -38,12 +37,11 @@ Route::resource('/ofertas','ofertescontroller');
 
 Auth::routes();
 
-Route::resource('/users', 'UserController');
-
+Route::get('/categorias/{id}','HomeController@categorias')->where('id','[0-9]+');
 Route::resource('roles', 'RoleController');
 Route::get('/mapa', 'HomeController@mapa');
-
 Route::resource('permissions', 'PermissionController');
-
 Route::resource('/productos','ProductesController');
-Route::get('/{id}', 'HomeController@show');
+Route::resource('/ofertas','ofertescontroller');
+Route::resource('/users', 'UserController');
+Route::get('/{id}', 'HomeController@show')->where('id','[0-9]+');

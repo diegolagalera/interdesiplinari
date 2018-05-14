@@ -20,6 +20,7 @@ class CreateProductesTable extends Migration
             $table->string('descripcio');
             $table->longText('caracteristiques');
             $table->string('imatge');
+            $table->integer('tipus')->default(1);
             $table->timestamps();
         });
     }

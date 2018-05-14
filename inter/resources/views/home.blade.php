@@ -1,7 +1,16 @@
 @extends('layouts.layoutf')
 
 @section('content')
+
 <div class="container">
+  <nav style="margin-left:10%; ">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="/">Inicio</a></li>
+    <li class="page-item"><a class="page-link" href="/categorias/1">Productos</a></li>
+    <li class="page-item"><a class="page-link" href="/categorias/2">Peinados / Cortes</a></li>
+    <li class="page-item"><a class="page-link" href="/categorias/3">Ofertas</a></li>
+  </ul>
+</nav>
 <?php $var = 'active';
 $array = array("First slide","Second slide","Third slide",);
 $count =0;?>
