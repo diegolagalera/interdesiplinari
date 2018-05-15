@@ -37,7 +37,7 @@
       <a href="{{url('/ofertas')}}"><p style="margin-top: 2%;">Tornar</p></a>
     </div>
     <div class="col-md-6">
-      <input style="margin-left: 60%;" type="submit" value="Enviar" class="btn btn-primary"><small id="Comprovacio"></small>
+      <input style="margin-left: 35%;" type="submit" value="Enviar" class="btn btn-primary"><small id="Comprovacio"></small>
     </div>
   </div>
 </div>

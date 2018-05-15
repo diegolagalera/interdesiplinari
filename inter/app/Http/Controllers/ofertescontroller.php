@@ -56,7 +56,7 @@ class ofertescontroller extends Controller
         orWhereBetween('data_final',[$request->data_inici,$request->data_final])->get();
 
         if($count->isEmpty()){
-            
+
           $oferta = new ofertes($request->all());
 
           if($oferta->save()){
@@ -64,11 +64,11 @@ class ofertescontroller extends Controller
 
           }
         }else{
-          return response()->json("Hay una oferta entre medio");
+          return response()->json("<span style='color:red'> * </span> Otra oferta entre mismos tiempos");
         }
 
       }else{
-          return response()->json("Hay una oferta entre medio");
+          return response()->json("<span style='color:red'> * </span> Otra oferta entre mismos tiempos");
             return view("ofertas.create");
     }
 
