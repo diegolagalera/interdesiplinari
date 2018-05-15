@@ -25,6 +25,31 @@ class clearance
           return $next($request);
         }
       }
+      if($request->is('cistella')){
+        if(!Auth::user()->hasRole('administrador')){
+          abort(401);
+        }
+        else{
+          return $next($request);
+        }
+      }
+      if($request->is('ofertas')){
+        if(!Auth::user()->hasRole('administrador')){
+          abort(401);
+        }
+        else{
+          return $next($request);
+        }
+      }
+      if($request->is('users')){
+        if(!Auth::user()->hasRole('administrador')){
+          abort(401);
+        }
+        else{
+          return $next($request);
+        }
+      }
+      
         return $next($request);
 
     }

@@ -18,7 +18,7 @@ use Session;
 class UserController extends Controller {
 
     public function __construct() {
-        $this->middleware(['auth', 'isAdmin'])->except('registre','verify'); //isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth', 'isAdmin', 'clearance'])->except('registre','verify'); //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
 
     /**
