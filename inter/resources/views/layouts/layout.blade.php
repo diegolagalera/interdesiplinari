@@ -45,7 +45,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="/users" class="simple-text">
                     BAXkids Admin
                 </a>
             </div>
@@ -158,24 +158,24 @@
                     <ul>
 
                         <li>
-                            <a href="http://www.creative-tim.com">
+                            <a href="">
                                 Creative Tim
                             </a>
                         </li>
                         <li>
-                            <a href="http://blog.creative-tim.com">
+                            <a href="">
                                Blog
                             </a>
                         </li>
                         <li>
-                            <a href="http://www.creative-tim.com/license">
+                            <a href="">
                                 Licenses
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="/">Creative Tim</a>
                 </div>
             </div>
         </footer>

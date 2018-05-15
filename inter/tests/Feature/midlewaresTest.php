@@ -43,7 +43,7 @@ class midlewaresTest extends TestCase
       ]);
       $this->assertEquals(200, $response->getStatusCode());
       $this->call('GET', '/productos/1/edit');
-      $response->assertStatus(200);
+      $response->assertStatus(302);
 
 
     }

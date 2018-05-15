@@ -30,8 +30,6 @@ class ofertescontroller extends Controller
     public function create()
     {
 
-      // $count = ofertes::where([['id_producte','=',7 ],
-      // ['data_inici','<','22-02-2011 22:22:00'],['data_final','>','29-02-2020 22:22:00']])->get();
 
       $oferta = new ofertes;
       $product = productes::orderBy('id','ASC')->pluck('nom','id')->toArray();
@@ -48,19 +46,32 @@ class ofertescontroller extends Controller
     {
 
       $count = ofertes::where([['id_producte','=',$request->id_producte],
-    ['data_inici','<',$request->data_inici],['data_final','>',$request->data_final]])->get();
+    ['data_inici','<',$request->data_inici],['data_final','>',$request->data_inici]])->
+    orWhere([['data_inici','<',$request->data_final],['data_final','>',$request->data_final]])->get();
 
       if($count->isEmpty()){
-        $oferta = new ofertes($request->all());
+
+        $count = DB::table('ofertes')->where('id_producte','=',$request->id_producte)->
+        whereBetween('data_inici',[$request->data_inici,$request->data_final])->
+        orWhereBetween('data_final',[$request->data_inici,$request->data_final])->get();
+
+        if($count->isEmpty()){
+            
+          $oferta = new ofertes($request->all());
 
           if($oferta->save()){
             return response()->json("1");
 
           }
+        }else{
+          return response()->json("Hay una oferta entre medio");
+        }
+
       }else{
-          return response()->json("Fechas incorrectas");
+          return response()->json("Hay una oferta entre medio");
             return view("ofertas.create");
     }
+
     }
 
     /**
