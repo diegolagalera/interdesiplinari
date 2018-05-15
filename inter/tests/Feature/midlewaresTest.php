@@ -42,7 +42,9 @@ class midlewaresTest extends TestCase
         '_token' => csrf_token()
       ]);
       $this->assertEquals(200, $response->getStatusCode());
-      $this->assertEquals('auth.login', $response->original->name());
-        
+      $this->call('GET', '/productos/1/edit');
+      $response->assertStatus(200);
+
+
     }
 }

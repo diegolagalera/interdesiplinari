@@ -21,7 +21,7 @@
       <div class="row" style="margin-left: -6%;">
         <div class="col-md-6">
           {{ Form::label('data', 'Data Inicio') }}<br>
-          <input id="data_inici" name="data_inici" type="datetime-local" required><br>{{$oferta->data_final}}<br>
+          <input id="data_inici" name="data_inici" type="datetime-local" required><br>{{$oferta->data_inici}}<br>
         </div>
         <div class="col-md-6">
           {{ Form::label('data', 'Data Final') }}<br>
