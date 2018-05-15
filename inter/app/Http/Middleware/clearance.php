@@ -17,7 +17,7 @@ class clearance
      */
     public function handle($request, Closure $next)
     {
-      if($request->is('productos')){
+      if($request->is(('productos')||('productos/create'))){
         if(!Auth::user()->hasRole('administrador')){
           abort(401);
         }
@@ -49,8 +49,6 @@ class clearance
           return $next($request);
         }
       }
-      
         return $next($request);
-
     }
 }
