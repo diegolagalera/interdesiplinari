@@ -6,13 +6,13 @@
 
 <div class='col-lg-4 col-lg-offset-4'>
 
-    <h1><i class='fa fa-key'></i>&nbsp&nbsp Add Role</h1>
+    <h1><i class='fa fa-key'></i>&nbsp&nbsp Crear Rol</h1>
     <hr>
 
     {{ Form::open(array('url' => 'roles')) }}
 
     <div class="form-group">
-        {{ Form::label('name', 'Name') }}
+        {{ Form::label('name', 'Nombre') }}
         {{ Form::text('name', null, array('class' => 'form-control')) }}
     </div>
 
@@ -26,7 +26,7 @@
         @endforeach
     </div>
 
-    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Agregar', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
 

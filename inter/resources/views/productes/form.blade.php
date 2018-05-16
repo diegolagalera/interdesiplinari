@@ -29,7 +29,7 @@
 </div>
     <div class="row">
       <div class="col-md-6">
-        <a href="{{url('/productos')}}"><p style="margin-top: 2%;">Tornar</p></a>
+        <a href="{{url('/productos')}}"><p style="margin-top: 2%;">Volver</p></a>
       </div>
       <div  class="col-md-6 "  >
       <input style="margin-left: 60%;" type="submit" value="Enviar" class="btn btn-primary" >

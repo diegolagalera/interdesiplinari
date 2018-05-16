@@ -7,13 +7,13 @@
 
 <div class='col-lg-4 col-lg-offset-4'>
 
-    <h1><i class='fa fa-user-plus'></i>&nbsp&nbsp Add User</h1>
+    <h1><i class='fa fa-user-plus'></i>&nbsp&nbsp Agregar Usuario</h1>
     <hr>
 
     {{ Form::open(array('url' => 'users')) }}
 
     <div class="form-group">
-        {{ Form::label('name', 'Name') }}
+        {{ Form::label('name', 'Nombre') }}
         {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div>
 
@@ -42,7 +42,7 @@
 
     </div>
 
-    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Agregar', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
 

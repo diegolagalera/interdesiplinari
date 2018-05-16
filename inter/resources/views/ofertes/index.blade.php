@@ -13,10 +13,10 @@
       <table id="example"  class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th class="text-center">Productes</th>
-          <th class="text-center">data_inici</th>
-          <th class="text-center">data_final</th>
-          <th class="text-center">descompte</th>
+          <th class="text-center">Producto</th>
+          <th class="text-center">Data inicio</th>
+          <th class="text-center">Data final</th>
+          <th class="text-center">Descuento</th>
           <th class="text-center">Opciones</th>
         </tr>
       </thead>

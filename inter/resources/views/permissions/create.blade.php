@@ -7,7 +7,7 @@
 
 <div class='col-lg-4 col-lg-offset-4'>
 
-    <h1><i class='fa fa-key'></i>&nbsp&nbsp Add Permission</h1>
+    <h1><i class='fa fa-key'></i>&nbsp&nbsp Agregar Permiso</h1>
     <br>
 
     {{ Form::open(array('url' => 'permissions')) }}
@@ -16,7 +16,7 @@
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div><br>
-    @if(!$roles->isEmpty()) //If no roles exist yet
+    @if(!$roles->isEmpty())
         <h4>Assign Permission to Roles</h4>
 
         @foreach ($roles as $role)
@@ -26,7 +26,7 @@
         @endforeach
     @endif
     <br>
-    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Agregar', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
 

@@ -14,7 +14,7 @@
       <thead>
         <tr>
           <th class="text-center">Nombre</th>
-          <th class="text-center">Descrpicion</th>
+          <th class="text-center">Descrpición</th>
           <th class="text-center">Precio</th>
           <th class="text-center">Imagen</th>
           <th class="text-center">Opciones</th>

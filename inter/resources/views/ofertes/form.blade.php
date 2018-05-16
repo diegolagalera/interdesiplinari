@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-8">
           {{ Form::label('producto', 'Producto') }}<br>
-          {!! Form::select('id_producte',$product,null,['id'=>'id_producte','class'=>'form-control']) !!}
+          {!! Form::select('id_producte',$product,null,['id'=>'id_producte','class'=>'form-control','required' => 'required']) !!}
         </div>
       </div>
       <div class="row">
@@ -34,7 +34,7 @@
 
     <div class="row">
       <div class="col-md-6">
-      <a href="{{url('/ofertas')}}"><p style="margin-top: 2%;">Tornar</p></a>
+      <a href="{{url('/ofertas')}}"><p style="margin-top: 2%;">Volver</p></a>
     </div>
     <div class="col-md-6">
       <input style="margin-left: 35%;" type="submit" value="Enviar" class="btn btn-primary"><small id="Comprovacio"></small>
