@@ -11,7 +11,7 @@ use Auth;
 class CistellaController extends Controller
 {
     public function __construct() {
-        $this->middleware(['auth', 'clearance']);
+        $this->middleware(['auth', 'clearance'])->except('cancel','show','store','destroy','finalitzar');
     }
     /**
      * Display a listing of the resource.
@@ -81,7 +81,7 @@ class CistellaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
       $producte=['-1'];
       $cistella= cistella::where([['id_usuari','=',Auth::user()->id],['status','=',1]])->get();
@@ -121,12 +121,21 @@ class CistellaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-      $producte = productes_comprats::findOrFail($id);
-      $producte->delete();
+        if($request->valor==1){
+            $producte = productes_comprats::findOrFail($id);
+            $producte->delete();
+            $cistella= cistella::where([['id_usuari','=',Auth::user()->id],['id','=',$request->id_cistella]])->delete();
+            return redirect('cistella/show');
 
-      return redirect('cistella/show');
+        }
+        else{
+          $producte = productes_comprats::findOrFail($id);
+          $producte->delete();
+
+          return redirect('cistella/show');
+        }
     }
 
     public function cancel($id)

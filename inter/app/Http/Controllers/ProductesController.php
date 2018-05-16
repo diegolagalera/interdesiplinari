@@ -9,7 +9,7 @@ use DB;
 class ProductesController extends Controller
 {
   public function __construct() {
-      $this->middleware(['auth', 'clearance']);
+      $this->middleware(['auth', 'clearance'])->except('show');
   }
     /**
      * Display a listing of the resource.
