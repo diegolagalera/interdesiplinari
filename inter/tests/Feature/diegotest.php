@@ -8,6 +8,8 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
+use DB;
+
 class diegoTest extends TestCase
 {
 
@@ -44,4 +46,25 @@ class diegoTest extends TestCase
 	    ->assertSee('cesta');		
 	    self::assertTrue(true);
     }
+	/** @test */
+	public function it_creates_a_new_user()
+	{
+	    /**$this->post('/users', [
+	        'name' => 'Duilio',
+	        'email' => 'duilio@styde.net',
+	        'password' => '123456'
+	    ]);**/
+	    factory(User::class)->create([
+        	'name' => 'Duilio',
+	        'email' => 'duilio@styde.net',
+	        'password' => '123456'
+    	]);
+ 
+
+		$this->assertDatabaseHas('users', [
+		    'name' => 'Duilio',
+		    'email' => 'duilio@styde.net',
+		]);
+
+	}
 }

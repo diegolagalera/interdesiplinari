@@ -4,7 +4,6 @@
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use DatabaseMigration;
 use Faker\Generator as Faker;
 
 class midlewaresTest extends TestCase
