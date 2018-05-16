@@ -23,15 +23,14 @@ Ayuda a suavizar la dermis y eliminar rojeces, reforzando la barrera cutánea y 
       productes::create([
         'nom'=>'Shampoo for children piruleta de cereza.',
         'preu'=>6.00,
-        'descripcio'=>'El champú Piruleta de Cereza de FashionKids Professional tiene un aroma divertido y es alegre como nuestros niños. Además, posee FILTRO SOLAR que ayuda a mantener el color natural del cabello, protegiéndolo de las radiaciones solares.',
-        'caracteristiques'=>'El extracto de cerezas: Posee propiedades hidratantes, protectoras y ligeramente exfoliantes, ayuda a limpiar en profundidad el cabello, revitalizándolo y aportándole luminosidad.
-La jalea real: Proviene de la secreción de unas glándulas de las abejas obreras, encargadas de llevar el alimento a las reinas y a las larvas en los primeros días de vida. Aporta al cabello brillo y fuerza, reparando las puntas abiertas.',
+        'descripcio'=>'El champú Piruleta de Cereza de FashionKids Professional tiene un aroma divertido y es alegre como nuestros niños. Además, posee FILTRO SOLAR.',
+        'caracteristiques'=>'El extracto de cerezas: Posee propiedades hidratantes, protectoras y ligeramente exfoliantes, ayuda a limpiar en profundidad el cabello, revitalizándolo y aportándole luminosidad.',
         'imatge'=>'http://127.0.0.1:8000/images/1525363013.png',
       ]);
       productes::create([
         'nom'=>'Instant Conditioner for children',
         'preu'=>7.50,
-        'descripcio'=>'El Instant conditioner for children de FashionKids Professional es un acondicionador sin aclarado de textura muy fresca y fluida que puede usarse diariamente.Está indicado para uso frecuente, para cabellos normales o con tendencia a secos.',
+        'descripcio'=>'El Instant conditioner for children de FashionKids Professional es un acondicionador sin aclarado de textura muy fresca y fluida que puede usarse diariamente.',
         'caracteristiques'=>'El extracto de algodón: Los carbohidratos de las semillas del algodón tienen la capacidad de absorber y retener el agua, actuando como una sustancia humectante, mejorando notablemente las propiedades biomecánicas del pelo. Las proteínas ofrecen adicionalmente un efecto tensor, acondicionando y aumentando la flexibilidad del cabello.
 La dimeticona: Se utiliza como factor lubricante y emoliente del cabello, que combinado con el extracto de algodón, ayuda a crear una película alrededor del cabello, ayudándolo a aumentar su elasticidad, reparándolo y disminuyendo el riesgo de rotura.',
         'imatge'=>'http://127.0.0.1:8000/images/1525363118.png',
@@ -39,7 +38,7 @@ La dimeticona: Se utiliza como factor lubricante y emoliente del cabello, que co
       productes::create([
         'nom'=>'Hair Mask for children con extracto de cacao y aceite de argán',
         'preu'=>7.00,
-        'descripcio'=>'La mascarilla FashionKids Professional con extracto de cacao y aceite de argán .Con un agradable aroma a chocolate aporta al cabello hidratación profunda, estimulando su brillo y elasticidad natural. No contiene parabenos.',
+        'descripcio'=>'La mascarilla FashionKids Professional con extracto de cacao y aceite de argán .Con un agradable aroma a chocolate aporta al cabello hidratación profunda.',
         'caracteristiques'=>'El extracto de cacao: Se obtiene a partir de los frutos del árbol del cacao. Es fuente importante de antioxidantes polifenólicos que protegen el cabello frente a los procesos oxidativos.
 El aceite de argán: Proviene de las semillas del árbol Argania spinosa, crece en zonas desérticas con una vitalidad muy particular, sus raíces ayudan a la filtración del agua, protegiendo a los suelos de la erosión.',
         'imatge'=>'http://127.0.0.1:8000/images/1525363181.png',
@@ -47,7 +46,7 @@ El aceite de argán: Proviene de las semillas del árbol Argania spinosa, crece 
       productes::create([
         'nom'=>'Hair Mask for children al aceite del árbol del té y almendras dulces',
         'preu'=>7.00,
-        'descripcio'=>'La mascarilla con aroma a fresa FashionKids Professional al aceite del árbol del té y almendras dulces, deja el cabello muy manejable e hidratado a partir de los aceites esenciales de su formulación',
+        'descripcio'=>'La mascarilla con aroma a fresa FashionKids Professional al aceite del árbol del té y almendras dulces, deja el cabello muy manejable e hidratado.',
         'caracteristiques'=>'El aceite del árbol del té: Se obtiene de la destilación en alambique de las hojas del árbol Melaleuca Alternifolia. Reconocido por sus cualidades antisépticas y de prevención frente a los piojos, es además regulador de las glándulas sebáceas, de utilización tanto en cabellos grasos como secos.
 El aceite de almendras dulces: Extraído por presión de la semilla del almendra,  para mejorar la apariencia y el estado general de la piel, especialmente en casos de sequedad y deshidratación. Aplicado en cabellos quebradizos, produce efectos reconstituyentes.',
         'imatge'=>'http://127.0.0.1:8000/images/1525363238.png',

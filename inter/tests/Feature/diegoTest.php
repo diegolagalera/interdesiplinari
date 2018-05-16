@@ -49,11 +49,6 @@ class diegoTest extends TestCase
 	/** @test */
 	public function it_creates_a_new_user()
 	{
-	    /**$this->post('/users', [
-	        'name' => 'Duilio',
-	        'email' => 'duilio@styde.net',
-	        'password' => '123456'
-	    ]);**/
 	    factory(User::class)->create([
         	'name' => 'Duilio',
 	        'email' => 'duilio@styde.net',
