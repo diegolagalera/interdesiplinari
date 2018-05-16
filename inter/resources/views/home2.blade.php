@@ -47,4 +47,5 @@ $count =0;?>
         @endforeach
 
     </div>
+</div>
 @endsection

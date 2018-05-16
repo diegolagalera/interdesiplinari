@@ -54,7 +54,7 @@
 
     </div>
 
-    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Registrate', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
 

@@ -1,6 +1,6 @@
 @extends('layouts.layoutf')
 @section('content')
-<h2><i class="fa fa-thumb-tack"></i>&nbsp&nbspDonde estamos?</h2>
+<h2><i class="fa fa-thumb-tack"></i>&nbsp&nbspDónde estamos?</h2>
 <div class="row">
 <div id="googleMap" style="width:100%;height:400px;"></div>
 </div>
