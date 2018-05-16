@@ -90,40 +90,9 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-								<p>Stats</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <p class="notification">5</p>
-									<p>Notifications</p>
-									<b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
-						<li>
-                            <a href="#">
-								<i class="ti-settings"></i>
-								<p>Settings</p>
-                            </a>
-                        </li>
-                    </ul>
 
                 </div>
+
             </div>
         </nav>
 
@@ -158,25 +127,23 @@
                     <ul>
 
                         <li>
-                            <a href="">
-                                Creative Tim
-                            </a>
+                            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/BAXKids_Amposta" target="_blank" data-original-title="Follow us on Twitter">
+																<i class="fa fa-twitter"></i>
+																</a>
                         </li>
                         <li>
-                            <a href="">
-                               Blog
-                            </a>
+													<a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" data-original-title="Like us on Facebook">
+															<i class="fa fa-facebook-square"></i>
+													</a>
                         </li>
                         <li>
-                            <a href="">
-                                Licenses
-                            </a>
+													<a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Follow us on Instagram">
+															<i class="fa fa-instagram"></i>
+													</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="/">Creative Tim</a>
-                </div>
+
             </div>
         </footer>
 
