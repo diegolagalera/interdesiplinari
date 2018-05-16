@@ -38,7 +38,6 @@ class midlewaresTest extends TestCase
       $this->call('GET', '/users/1/edit');
       $response->assertStatus(200);
     }
-<<<<<<< HEAD
     // public function testloginuser(){
     //   $response = $this->call('GET', '/login', [
     //     'email' => 'user@gmail.com',
@@ -61,17 +60,5 @@ class midlewaresTest extends TestCase
     //
     //
     // }
-  
-=======
 
-    public function testloginuser(){
-      $response = $this->call('GET', '/login', [
-        'email' => 'user@gmail.com',
-        'password' => '123456',
-        '_token' => csrf_token()
-      ]);
-      $this->assertEquals(200, $response->getStatusCode());
-      $this->call('GET', '/users/1/edit')->assertStatus(302);
-    }
->>>>>>> d39d2401e11f96c71d32a6a6109bed7b699bf387
 }
