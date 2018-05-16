@@ -67,4 +67,5 @@ class diegoTest extends TestCase
 		]);
 
 	}
+	
 }
