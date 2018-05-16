@@ -39,12 +39,12 @@
                   @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">
-                          <i class="material-icons"></i> {{ __('Login') }}
+                          <i class="material-icons"></i> {{ __('identificate') }}
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('registrar') }}">
-                          <i class="material-icons"></i> {{ __('Register') }}
+                          <i class="material-icons"></i> {{ __('Registrate') }}
                       </a>
                   </li>
                   @else
@@ -138,24 +138,35 @@
 
     <footer class="footer ">
         <div class="container">
-            <nav class="pull-left">
+            <nav class="pull-center">
                 <ul>
                     <li>
-                      <p><strong>Grup 1: </strong></p>
+                      <p><strong>Mapa Web </strong></p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p><a href="/">Inicio</a></p>
+                    </li>
+                      @guest
+                      @else
+                      <li>
+                        <p><a href="/{{Auth::user()->id}}">Perfil</a></p>
+                      </li>
+                      @endguest
+                    <li>
+                      <p><a href="/mapa">Localización</a></p>
                     </li>
                     <li>
-                      <p><strong>Professor:</strong> Alex Milian, Toni Morant, Carles Año</p>
+                      <p><a href="/faqs">FAQS</a></p>
+                    </li>
+                    <li>
+                      <p><a href="/contactar">Contactar</a></p>
                     </li>
 
                 </ul>
             </nav>
-            <div class="copyright pull-right">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>
-                <a href="" target="_blank">creative commons</a>
-            </div>
+
         </div>
     </footer>
     <!--   Core JS Files   -->

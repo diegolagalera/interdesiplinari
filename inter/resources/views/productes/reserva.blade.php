@@ -1,7 +1,7 @@
 {{ Form::open(['url' => $url, 'method' => $method]) }}
 <div class="row" style="margin-top:40px">
   <div class="col-md-6" >
-        <input id="unidades" type="number" style="width:70px" class="form-control" placeholder="unid..."name="unidades" required>
+        <input id="unidades" type="number" style="width:70px" class="form-control" value="1" placeholder="unid..."name="unidades" required>
   </div>
   <input id="id" type="hidden" style="width:70px" class="form-control" value="{{$product->id}}"name="id">
   @if(count($oferta)==0)

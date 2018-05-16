@@ -33,8 +33,10 @@ class midlewaresTest extends TestCase
         '_token' => csrf_token()
       ]);
       $this->assertEquals(200, $response->getStatusCode());
-      $this->assertEquals('auth.login', $response->original->name());
+      $this->call('GET', '/users/1/edit');
+      $response->assertStatus(200);
     }
+
     public function testloginuser(){
       $response = $this->call('GET', '/login', [
         'email' => 'user@gmail.com',
@@ -42,9 +44,6 @@ class midlewaresTest extends TestCase
         '_token' => csrf_token()
       ]);
       $this->assertEquals(200, $response->getStatusCode());
-      $this->call('GET', '/productos/1/edit');
-      $response->assertStatus(302);
-
-
+      $this->call('GET', '/users/1/edit')->assertStatus(302);
     }
 }
